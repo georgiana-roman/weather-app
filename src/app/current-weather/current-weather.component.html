@@ -1,0 +1,9 @@
+<ng-container *ngIf="weather$ | async; let weather" class="current-weather">
+    <h1>{{city}}</h1>
+    <p class="date">{{weather?.dt * 1000 | date: 'EEEE' | uppercase}}</p>
+    <img class="weather-icon" src="https://openweathermap.org/img/wn/{{ weather?.weather[0]?.icon }}@2x.png">
+    <h1 class="temperature">{{ weather?.main.temp_max | kelvinToCelsius }} °C</h1>
+    <p class="description">{{weather?.weather[0].description | uppercase}}</p>
+    <p class="humidity">HUMIDITY: {{weather?.main.humidity }} %</p>
+    <p class="wind">WIND SPEED: {{weather?.wind.speed}} km/h</p>
+</ng-container>

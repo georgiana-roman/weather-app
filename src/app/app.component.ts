@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WeatherService } from './services/weather.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  favoriteCities = ['Iasi', 'Amsterdam', 'Edinburgh', 'Barcelona', 'Oslo'];
+  currentWeather: Map<string, any> = new Map();
+
+  constructor(private weatherService: WeatherService) { }
+
+  getCurrentWeather(city: string): any {
+    return this.currentWeather.get(city);
+  }
 }

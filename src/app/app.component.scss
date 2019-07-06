@@ -1,0 +1,14 @@
+@import "./current-weather/current-weather.component.scss";
+@import "./temperature-chart//temperature-chart.component.scss";
+
+@mixin app-theme {
+  @include app-current-weather;
+  @include app-temperature-chart;
+
+  app-root {
+    text-align: center;
+  }
+}
+
+
+

@@ -1,0 +1,7 @@
+@mixin app-temperature-chart {
+  div.chart-container {
+    width: 50%;
+    padding-top: 20px;
+    margin: 0 auto;
+  }
+}
